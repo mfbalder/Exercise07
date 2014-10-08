@@ -16,6 +16,16 @@ with open(filename) as f:
 for word in sorted(sorted(word_counts), key=word_counts.get, reverse=True):
     print word, word_counts[word]
 
+
+# Another good solution: items creates a list of tuples. We sort that list by the first item in the tuple, then we set the key to 
+# sort by a lambda function that returns the second item in the tuple (the frequency) in reverse order
+
+# items = word_counts.items()
+# for word, frequency in sorted(sorted(items), key=lambda x: x[1], reverse=True):
+# 	print word, frequency
+
+
+
 #for word in sorted(word_counts, cmp=lambda x,y: cmp(word_counts[x], word_counts[y]), reverse=True):
 #    print word, word_counts[word]
 
